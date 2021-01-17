@@ -107,16 +107,16 @@ const Posts = (props: postsProps) => {
             <IonCard style={{marginTop:"20px"}} key={index}>
               <img src={post.data.image} />
               <IonCardHeader>
-                <IonCardTitle>{post.data.title}</IonCardTitle>
+                <IonCardTitle color="white">{post.data.title}</IonCardTitle>
                 <IonCardSubtitle className="cardSubtitle">
-                <IonIcon size = "large" icon={shareSocialOutline} ></IonIcon>
+                <IonIcon size = "large" icon={shareSocialOutline} style={{color:"white"}}></IonIcon>
                 <IonIcon size = "large" icon={checkUser(post.id) >= 1 ? star : myMap.get(post.data.descrition+1) ? star: starOutline} color="warning" onClick={async ()=>myMap.get(post.data.descrition+1) ? null :  handleHidden(post.data.descrition,1, post.rating, post.id)}></IonIcon>
                 <IonIcon size = "large" icon={checkUser(post.id) >= 2 ? star : myMap.get(post.data.descrition+2) ? star: starOutline} color="warning" onClick={async ()=>myMap.get(post.data.descrition+1) ? null :  handleHidden(post.data.descrition,2, post.rating, post.id)}></IonIcon>
                 <IonIcon size = "large" icon={checkUser(post.id) >= 3 ? star : myMap.get(post.data.descrition+3) ? star: starOutline} color="warning" onClick={async ()=>myMap.get(post.data.descrition+1) ? null :  handleHidden(post.data.descrition,3, post.rating, post.id)}></IonIcon>
                 <IonIcon size = "large" icon={checkUser(post.id) >= 4 ? star : myMap.get(post.data.descrition+4) ? star: starOutline} color="warning" onClick={async ()=>myMap.get(post.data.descrition+1) ? null :  handleHidden(post.data.descrition,4, post.rating, post.id)}></IonIcon>
                 <IonIcon size = "large" icon={checkUser(post.id) >= 5 ? star : myMap.get(post.data.descrition+5) ? star: starOutline} color="warning" onClick={async ()=>myMap.get(post.data.descrition+1) ? null :  handleHidden(post.data.descrition,5, post.rating, post.id)}></IonIcon>
-                <h2 className="rating">{post.rating.length == 0 ? "Não avaliado": (post.rating.reduce((a, b) => a + b, 0)/post.rating.length).toFixed(1) + "/5"}</h2>
-                <span className="tags">{post.media.map(el => <p>#{el}</p>).concat(post.subjects.map(el => <p>#{el}</p>))}</span>    
+                <h2 className="rating" style={{color:"white"}}>{post.rating.length == 0 ? "Não avaliado": (post.rating.reduce((a, b) => a + b, 0)/post.rating.length).toFixed(1) + "/5"}</h2>
+                <span className="tags" style={{color:"white"}}>{post.media.map(el => <p>#{el}</p>).concat(post.subjects.map(el => <p>#{el}</p>))}</span>    
                 </IonCardSubtitle>
               </IonCardHeader>
               <IonCardContent>{post.data.descrition}</IonCardContent>
