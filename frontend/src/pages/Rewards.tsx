@@ -77,31 +77,33 @@ export default class Rewards extends React.Component<any, any> {
     render() {
         return (
             <IonPage>
-                <div className="row">
-                    <IonSearchbar></IonSearchbar>
-                </div>
-                <div className="row">
-                    <TabButton
-                        title="Bolsas"
-                        icon={book}
-                        selected={this.state.selected === 'bolsas'}
-                        handleClick={this.handleTabButtonClick('bolsas')} />
-                    <TabButton
-                        title="Lazer"
-                        icon={ticket}
-                        selected={this.state.selected === 'lazer'}
-                        handleClick={this.handleTabButtonClick('lazer')} />
-                    <TabButton
-                        title="Outros"
-                        icon={ellipsisHorizontal}
-                        selected={this.state.selected === 'outros'}
-                        handleClick={this.handleTabButtonClick('outros')} />
-                </div>
-                <div className="xp">
-                    <h6>Meus pontos:</h6>
-                    <div className="xp-container">
-                        <h6>{this.state.userXP + 'XP'}</h6>
-                        <IonIcon icon={medal}></IonIcon>
+                <div className="container">
+                    <div className="row">
+                        <IonSearchbar></IonSearchbar>
+                    </div>
+                    <div className="row">
+                        <TabButton
+                            title="Bolsas"
+                            icon={book}
+                            selected={this.state.selected === 'bolsas'}
+                            handleClick={this.handleTabButtonClick('bolsas')} />
+                        <TabButton
+                            title="Lazer"
+                            icon={ticket}
+                            selected={this.state.selected === 'lazer'}
+                            handleClick={this.handleTabButtonClick('lazer')} />
+                        <TabButton
+                            title="Outros"
+                            icon={ellipsisHorizontal}
+                            selected={this.state.selected === 'outros'}
+                            handleClick={this.handleTabButtonClick('outros')} />
+                    </div>
+                    <div className="xp">
+                        <h6>Meus pontos:</h6>
+                        <div className="xp-container">
+                            <h6>{this.state.userXP + 'XP'}</h6>
+                            <IonIcon icon={medal}></IonIcon>
+                        </div>
                     </div>
                 </div>
                 <IonContent>

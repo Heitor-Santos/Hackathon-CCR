@@ -7,6 +7,10 @@
     --ion-color-secondary-tint: #bc2cdd;
 }
 
+ion-content{
+    --ion-background-color: #5CDB95;
+}
+
 .top-button {
     font-size: 15px;
     font-weight: 600;

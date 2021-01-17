@@ -1,3 +1,12 @@
+body {
+    background-color: #834760;
+}   
+
+ ion-card {
+    --background: #379683;
+    --color: white !important;
+}
+
 #user-info{
     justify-content: center;
     align-items: center;

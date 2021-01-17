@@ -62,7 +62,6 @@ const Profile: React.FC = () => {
             <IonItemDivider>
                 <div className="bottom-icons">
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="warning" icon={medalOutline}></IonIcon></IonItem>
-                    <IonItem lines="none"><IonIcon className="bottom-icon" color="success" icon={ribbonOutline}></IonIcon></IonItem>
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="medium" icon={rocketOutline}></IonIcon></IonItem>
                 </div>
             </IonItemDivider>

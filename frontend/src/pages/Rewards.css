@@ -29,6 +29,10 @@
     color: black;
 }
 
+.container {
+    background-color: #5CDB95;
+}
+
 .card {
     display: flex;
     justify-content: space-between;
