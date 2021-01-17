@@ -10,7 +10,7 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, home, map, person, square, ticket, triangle } from 'ionicons/icons';
+import { home, person, ticket} from 'ionicons/icons';
 import Tab1 from './pages/Tab 1/Tab1';
 import NewPost from './pages/NewPost/NewPost';
 
@@ -34,7 +34,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Profile from './pages/profile/profile';
 import Rewards from './pages/Rewards';
-import { profile } from 'console';
+import RewardDetails from './pages/rewardsDetail./rewardDetails';
 
 const App: React.FC = () => (
   <IonApp>
@@ -44,6 +44,7 @@ const App: React.FC = () => (
           <Route path="/tab1" component={Tab1} exact={true} />
           <Route path="/tab2" component={Rewards} exact={true} />
           <Route path="/tab3" component={Profile} exact={true}/>
+            <Route path="/rewards" component={RewardDetails} />
           <Route path="/new-post" component={NewPost} />
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>

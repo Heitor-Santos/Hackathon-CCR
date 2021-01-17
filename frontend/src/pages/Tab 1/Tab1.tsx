@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { IonAvatar, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonProgressBar, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonProgressBar} from '@ionic/react';
 import './Tab1.css';
-import { closeCircleOutline, happyOutline, happySharp, personCircleOutline, searchCircleOutline, shareOutline, shareSocialOutline, star, starOutline, warning } from 'ionicons/icons';
+import { closeCircleOutline, personCircleOutline, searchCircleOutline,  shareSocialOutline, star, starOutline} from 'ionicons/icons';
 import axios from 'axios'
-import { getSourceMapRange } from 'typescript';
 
 interface tagsProps {
   tags: string[],

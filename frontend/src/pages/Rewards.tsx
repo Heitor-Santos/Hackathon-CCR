@@ -62,50 +62,6 @@ export default class Rewards extends React.Component<any, any> {
         
         const rewards = (await axios.get("http://localhost:8888/rewards")).data;
 
-        /* const userXP: number = 1000;
-        const rewards: any = [
-            {
-                tag: 'bolsas',
-                xp_needed: 150,
-                data: {
-                    title: 'SENAC',
-                    description: 'Curso de logística',
-                },
-            },
-            {
-                tag: 'bolsas',
-                xp_needed: 200,
-                data: {
-                    title: 'CIEE',
-                    description: 'Curso de informática',
-                },
-            },
-            {
-                tag: 'lazer',
-                xp_needed: 500,
-                data: {
-                    title: 'Cinépolis',
-                    description: '50% de desconto',
-                },
-            },
-            {
-                tag: 'outros',
-                xp_needed: 100,
-                data: {
-                    title: 'Americanas',
-                    description: '10% de desconto',
-                },
-            },
-            {
-                tag: 'outros',
-                xp_needed: 200,
-                data: {
-                    title: 'Submarino',
-                    description: '20% de desconto',
-                },
-            },
-        ]; */
-
         this.setState({ userXP, rewards });
     }
 

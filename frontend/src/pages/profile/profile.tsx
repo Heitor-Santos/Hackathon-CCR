@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { IonAvatar, IonButton, IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonPage, IonProgressBar, IonTitle, IonToolbar } from '@ionic/react';
-//import ExploreContainer from '../components/ExploreContainer';
+import { IonAvatar, IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonPage, IonProgressBar, IonTitle, IonToolbar } from '@ionic/react';
 import './profile.css';
 import { arrowRedo, createOutline, layers, medalOutline, ribbonOutline, rocketOutline } from 'ionicons/icons';
 import axios from 'axios'
-import { useParams } from 'react-router';
 import { User } from '../../../../backend/interfaces'
 
 
@@ -68,6 +66,12 @@ const Profile: React.FC = () => {
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="medium" icon={rocketOutline}></IonIcon></IonItem>
                 </div>
             </IonItemDivider>
+            <IonItem lines="none" href="/rewards">
+                <div className="bottom-invite">
+                    <IonIcon className="bottom-invite-icon" color="secondary" icon={arrowRedo}></IonIcon>
+                    <p>Cupons Resgatados</p>
+                </div>
+            </IonItem>
             <IonItem lines="none">
                 <div className="bottom-invite">
                     <IonIcon className="bottom-invite-icon" color="secondary" icon={arrowRedo}></IonIcon>
