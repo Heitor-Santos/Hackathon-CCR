@@ -17,16 +17,16 @@
     height: 60px;
 
     background-color: white;
-    border: 1px solid #3880ff;
+    border: 1px solid #96D4B9;
     border-radius: 1rem;
-    color: #3880ff;
+    color: black;
 
     font-size: 16px;
 }
 
 .tab-button.selected {
-    background-color: #3880ff;
-    color: white;
+    background-color: #96D4B9;
+    color: black;
 }
 
 .card {
