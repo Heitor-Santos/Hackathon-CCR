@@ -55,10 +55,12 @@ export default class Rewards extends React.Component<any, any> {
     }
 
     async componentDidMount() {
-        const user: any = await axios.get('/user?email=' + this.props.userEmail);
+        const user: any = (await axios.get("http://localhost:8888/user?email=cr7m10@gmail.com")).data;
+        console.log(user)
         const userXP: number = user.ranking.xp;
+        console.log(userXP)
         
-        const rewards = await axios.get('/rewards');
+        const rewards = (await axios.get("http://localhost:8888/rewards")).data;
 
         /* const userXP: number = 1000;
         const rewards: any = [
@@ -112,7 +114,7 @@ export default class Rewards extends React.Component<any, any> {
     }
 
     handleRedeem = async (reward: any) => {
-        await axios.put('/rewards', reward);
+        await axios.put('http://localhost:8888/rewards', {...reward, email: "cr7m10@gmail.com"});
         this.setState((prevState: any) => ({ userXP: prevState.userXP - reward.xp_needed }));
     }
 
@@ -139,11 +141,19 @@ export default class Rewards extends React.Component<any, any> {
                         selected={this.state.selected === 'outros'}
                         handleClick={this.handleTabButtonClick('outros')} />
                 </div>
+                <div className="xp">
+                    <h6>Meus pontos:</h6>
+                    <div className="xp-container">
+                        <h6>{this.state.userXP + 'XP'}</h6>
+                        <IonIcon icon={medal}></IonIcon>
+                    </div>
+                </div>
                 <IonContent>
                     { this.state.rewards
                         .filter((reward: any) => reward.tag === this.state.selected)
-                        .map((reward: any) => (
+                        .map((reward: any, index : number) => (
                             <Reward
+                                key={index}
                                 userXP={this.state.userXP}
                                 title={reward.data.title}
                                 description={reward.data.description}
@@ -152,13 +162,7 @@ export default class Rewards extends React.Component<any, any> {
                         ))
                     }
                 </IonContent>
-                <div className="xp">
-                    <h6>Meus pontos:</h6>
-                    <div className="xp-container">
-                        <h6>{this.state.userXP + 'XP'}</h6>
-                        <IonIcon icon={medal}></IonIcon>
-                    </div>
-                </div>
+                
             </IonPage>
         );
     }
