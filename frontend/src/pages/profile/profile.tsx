@@ -26,6 +26,7 @@ const student : User = {
 const Profile: React.FC = () => {
   const [aluno, setAluno] = useState(student)
     useEffect(() => {
+      console.log("oioi")
         axios.get('http://localhost:8888/user?email=' + email)
             .then(response => setAluno(response.data))
     })
@@ -33,9 +34,6 @@ const Profile: React.FC = () => {
     return (
       <IonPage>
         <IonHeader class="ion-no-border">
-          <IonToolbar>
-            <IonButton className="top-button" color="light">Voltar</IonButton>
-          </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
             <div className="profile-content">

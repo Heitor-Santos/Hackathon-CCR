@@ -10,10 +10,8 @@ import {
   IonTabs
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { ellipse, home, map, person, square, ticket, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab 1/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +33,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import Profile from './pages/profile/profile';
 import Rewards from './pages/Rewards';
+import { profile } from 'console';
 
 const App: React.FC = () => (
   <IonApp>
@@ -43,21 +42,21 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route path="/tab1" component={Tab1} exact={true} />
           <Route path="/tab2" component={Rewards} exact={true} />
-          <Route path="/tab3" component={Profile} />
+          <Route path="/tab3" component={Profile} exact={true}/>
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonIcon icon={home} />
+            <IonLabel>Inicio</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonIcon icon={ticket} />
+            <IonLabel>Descontos</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="profile" href="/profile">
-            <IonIcon icon={square} />
-            <IonLabel>Profile</IonLabel>
+          <IonTabButton tab="profile" href="/tab3">
+            <IonIcon icon={person} />
+            <IonLabel>Perfil</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
