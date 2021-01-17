@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express"
 import { Db } from 'mongodb';
-import { getHome, postHome } from "../controllers/home";
+import { rescueReward, getAllRewards } from "../controllers/reward";
+import { createUser, getUser } from "../controllers/user";
 
 export default function (db: Db) {
     const router: Router = Router();
@@ -8,16 +9,30 @@ export default function (db: Db) {
     const routes = [
         {
             method: 'get',
-            path: '/',
+            path: '/user',
             controller: (req: Request, res: Response) => {
-                getHome(req,res,db)
+                getUser(req,res,db)
             }
         },
         {
             method: 'post',
-            path: '/',
+            path: '/user',
             controller: (req: Request, res: Response) => {
-                postHome(req,res,db)
+                createUser(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/rewards',
+            controller: (req: Request, res: Response) => {
+                getAllRewards(req,res,db)
+            }
+        },
+        {
+            method: 'put',
+            path: '/rewards',
+            controller: (req: Request, res: Response) => {
+                rescueReward(req,res,db)
             }
         },
     ];
