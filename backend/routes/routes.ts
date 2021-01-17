@@ -1,6 +1,8 @@
 import { Request, Response, Router } from "express"
 import { Db } from 'mongodb';
-import { getHome, postHome } from "../controllers/home";
+import { createPublication, deletePublication, getAllPublication, getPublicationByType, updatePublication } from "../controllers/publication";
+import { rescueReward, getAllRewards } from "../controllers/reward";
+import { createUser, getUser, updateUser } from "../controllers/user";
 
 export default function (db: Db) {
     const router: Router = Router();
@@ -8,16 +10,79 @@ export default function (db: Db) {
     const routes = [
         {
             method: 'get',
-            path: '/',
+            path: '/user',
             controller: (req: Request, res: Response) => {
-                getHome(req,res,db)
+                getUser(req,res,db)
             }
         },
         {
             method: 'post',
-            path: '/',
+            path: '/user',
             controller: (req: Request, res: Response) => {
-                postHome(req,res,db)
+                createUser(req,res,db)
+            }
+        },
+        {
+            method: 'put',
+            path: '/user',
+            controller: (req: Request, res: Response) => {
+                updateUser(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/publication',
+            controller: (req: Request, res: Response) => {
+                getAllPublication(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/publication/type',
+            controller: (req: Request, res: Response) => {
+                getPublicationByType(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/publication/:id',
+            controller: (req: Request, res: Response) => {
+                getAllPublication(req,res,db)
+            }
+        },
+        {
+            method: 'post',
+            path: '/publication',
+            controller: (req: Request, res: Response) => {
+                createPublication(req,res,db)
+            }
+        },
+        {
+            method: 'put',
+            path: '/publication',
+            controller: (req: Request, res: Response) => {
+                updatePublication(req,res,db)
+            }
+        },
+        {
+            method: 'delete',
+            path: '/publication',
+            controller: (req: Request, res: Response) => {
+                deletePublication(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/rewards',
+            controller: (req: Request, res: Response) => {
+                getAllRewards(req,res,db)
+            }
+        },
+        {
+            method: 'put',
+            path: '/rewards',
+            controller: (req: Request, res: Response) => {
+                rescueReward(req,res,db)
             }
         },
     ];

@@ -5,20 +5,29 @@ import './profile.css';
 import { arrowRedo, createOutline, layers, medalOutline, ribbonOutline, rocketOutline } from 'ionicons/icons';
 import axios from 'axios'
 import { useParams } from 'react-router';
+import { User } from '../../../../backend/interfaces'
 
 
 const email: string = "cr7m10@gmail.com"
+const student : User = {
+  name: "",
+  email: "",
+  school: "",
+  ranking: {
+      level: 0,
+      xp: 0
+  },
+  publications: [],
+  rewards: [],
+  favorites: []
+}
+
 
 const Profile: React.FC = () => {
-    let aluno : any = ""
-    //let { email } = useParams();
+  const [aluno, setAluno] = useState(student)
     useEffect(() => {
-        axios.get('http://localhost:8888/users?email=' + email)
-            .then(response => aluno = response.data)
-        // const getAluno = async () => {
-        //     const response = await axios.get(`http://localhost:8888/users`).then(data => data.json())
-           
-        // }
+        axios.get('http://localhost:8888/user?email=' + email)
+            .then(response => setAluno(response.data))
     })
 
     return (
@@ -49,12 +58,12 @@ const Profile: React.FC = () => {
                 </IonItem>
             </div>
             <div className="profile-xp">
-                {aluno.xp}
+                {aluno.ranking.xp}xp
             </div>
             <IonItem lines="none">
                 <p>Progresso na fase...</p>
             </IonItem>
-            <IonProgressBar className="bar-progress" color="success" value={aluno.xp/100}></IonProgressBar>
+            <IonProgressBar className="bar-progress" color="success" value={aluno.ranking.xp/100}></IonProgressBar>
             <IonItemDivider>
                 <div className="bottom-icons">
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="warning" icon={medalOutline}></IonIcon></IonItem>
