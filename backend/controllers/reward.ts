@@ -4,7 +4,7 @@ import { Reward, User } from "../interfaces";
 
 export async function getAllRewards(_req: Request, res: Response, db: Db) {
 
-    const allRewards = <Reward[]> (await db.collection('rewards').find().limit(50).toArray())
+    const allRewards = <Reward[]> (await db.collection('rewards').find().limit(250).toArray())
 
     if (allRewards.length > 0) {
         res.send(allRewards)

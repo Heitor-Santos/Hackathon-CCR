@@ -2,6 +2,17 @@ import { Db } from "mongodb";
 import { Request, Response } from 'express';
 import { User } from "../interfaces";
 
+export async function getUser(req: Request, res: Response, db: Db) {
+
+    const user = <User> (await db.collection("users").findOne({email: req.query.email}))
+    
+    if (user) {
+        res.status(200).send(user)
+    } else {
+        res.status(404).send({msg: "User not found"})
+    }
+}
+
 export async function createUser(req: Request, res: Response, db: Db) {
 
     const user = <User> {
@@ -27,13 +38,17 @@ export async function createUser(req: Request, res: Response, db: Db) {
     }
 }
 
-export async function getUser(req: Request, res: Response, db: Db) {
+export async function updateUser(req: Request, res: Response, db: Db) {
 
-    const user = <User> (await db.collection("users").findOne({email: req.query.email}))
-    
-    if (user) {
-        res.status(200).send(user)
-    } else {
-        res.status(404).send({msg: "User not found"})
+    const user = <User> (await db.collection("users").findOne({email: req.body.email}))
+
+    for (var [key, value] of Object.entries(req.body)) {
+
+        user[key] = value
     }
+
+    await db.collection('users').replaceOne({email: req.body.email}, user)
+
+    res.status(200).send({msg: "User update with success"})
 }
+
