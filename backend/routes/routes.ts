@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express"
 import { Db } from 'mongodb';
-import { createPublication, deletePublication, getAllPublication, updatePublication } from "../controllers/publication";
+import { createPublication, deletePublication, getAllPublication, getPublicationByType, updatePublication } from "../controllers/publication";
 import { rescueReward, getAllRewards } from "../controllers/reward";
 import { createUser, getUser, updateUser } from "../controllers/user";
 
@@ -34,6 +34,13 @@ export default function (db: Db) {
             path: '/publication',
             controller: (req: Request, res: Response) => {
                 getAllPublication(req,res,db)
+            }
+        },
+        {
+            method: 'get',
+            path: '/publication/type',
+            controller: (req: Request, res: Response) => {
+                getPublicationByType(req,res,db)
             }
         },
         {

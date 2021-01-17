@@ -26,6 +26,18 @@ export async function getPublication(req: Request, res: Response, db: Db) {
 
 }
 
+export async function getPublicationByType(req: Request, res: Response, db: Db) {
+
+    const stringReq = req.query.type + ""
+    let arrayReq = stringReq.split(",")
+    
+    const find = await db.collection('publications')
+        .find({or: [{subjects: {$in: arrayReq}}, {media: {$in: arrayReq}}]})
+
+    res.status(200).send(find)
+
+}
+
 export async function createPublication(req: Request, res: Response, db: Db) {
 
     const publication: Publication = {
@@ -63,7 +75,7 @@ export async function updatePublication(req: Request, res: Response, db: Db) {
     const publication = <Publication> (await db.collection("publications").findOne({id: req.body.id}))
 
     for (var [key, value] of Object.entries(req.body)) {
-        
+
         publication[key] = value
     }
 
