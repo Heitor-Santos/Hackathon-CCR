@@ -99,12 +99,12 @@ const Tab1: React.FC = () => {
       <IonContent fullscreen>
         <div id="user-info">
           <span>
-            <p>João dos Santos</p>
+            <p>Lumar</p>
             <p><IonProgressBar value={0.6} id="user-xp"></IonProgressBar></p>
           </span>
           <IonIcon icon={personCircleOutline} id="avatar"></IonIcon>
         </div>
-        <IonButton expand="block" id="bt-new-post">Fazer nova publicação</IonButton>
+        <IonButton expand="block" id="bt-new-post" href="new-post">Fazer nova publicação</IonButton>
         <IonItem id="search">
           <IonInput placeholder="Filtre as publicações por tags" onIonChange={(e) => addTag(e)} type="search"></IonInput>
           <IonIcon icon={searchCircleOutline} onClick={()=>getPosts()}></IonIcon>
