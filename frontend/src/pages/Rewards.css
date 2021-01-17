@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
 
-    margin: 2rem 0;
+    margin: 2rem 1rem;
     padding: 1rem;
 
     border: 1px solid black;
@@ -60,6 +60,41 @@
     font-size: 0.8rem;
 }
 
-.xp-info {
+.card .xp-info {
     align-items: center;
+}
+
+.xp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    bottom: 80px;
+    width: 80%;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: white;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+
+    border: 1px solid black;
+}
+
+.xp h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0 1rem 0 0;
+    text-align: center;
+}
+
+.xp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+    width: 70%;
+    height: 40px;
 }
