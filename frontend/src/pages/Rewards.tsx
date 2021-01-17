@@ -26,7 +26,7 @@ const Reward: React.FC<any> = (props: any) => {
             <div className="about">
                 <h1>{props.title}</h1>
                 <p>{props.description}</p>
-                <IonIcon icon={heart}></IonIcon>
+                {/* <IonIcon icon={heart}></IonIcon> */}
             </div>
             <div className="xp-info">
                 <small>{props.neededXP + "XP"}</small>
@@ -64,7 +64,7 @@ export default class Rewards extends React.Component<any, any> {
                 <div className="row">
                     <IonButton fill="outline">Voltar</IonButton>
                     <IonSearchbar></IonSearchbar>
-                    <IonButton><IonIcon icon={heart}></IonIcon></IonButton>
+                    {/* <IonButton><IonIcon icon={heart}></IonIcon></IonButton> */}
                 </div>
                 <div className="row">
                     <TabButton
