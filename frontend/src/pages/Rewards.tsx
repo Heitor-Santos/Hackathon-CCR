@@ -31,7 +31,7 @@ const Reward: React.FC<any> = (props: any) => {
             </div>
             <div className="xp-info">
                 <small>{props.neededXP + "XP"}</small>
-                <IonButton disabled={props.neededXP > props.userXP} onClick={props.onRedeem}>
+                <IonButton id="bt" disabled={props.neededXP > props.userXP} onClick={props.onRedeem}>
                     Resgatar
                 </IonButton>
                 { props.neededXP > props.userXP && (

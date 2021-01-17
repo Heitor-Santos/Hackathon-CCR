@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { IonAvatar, IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonPage, IonProgressBar, IonTitle, IonToolbar } from '@ionic/react';
 import './profile.css';
-import { arrowRedo, createOutline, layers, medalOutline, ribbonOutline, rocketOutline } from 'ionicons/icons';
+import { arrowRedo, createOutline, layers, medalOutline, personCircleOutline, ribbonOutline, rocketOutline } from 'ionicons/icons';
 import axios from 'axios'
 import { User } from '../../../../backend/interfaces'
 
@@ -34,12 +34,8 @@ const Profile: React.FC = () => {
         </IonHeader>
         <IonContent fullscreen>
             <div className="profile-content">
-                <IonItem lines="none" className="profile-content-avatar">
-                    <IonAvatar className="item-avatar">
-                        <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" />
-                    </IonAvatar>
-                    <IonIcon className="profile-content-avatar-icon" icon={createOutline}></IonIcon>
-                </IonItem>
+                <p style={{textAlign:'center'}}><IonIcon icon={personCircleOutline} style={{height:"100px", width:"100px"}}></IonIcon></p>
+                <p style={{textAlign:'center'}}><IonIcon className="profile-content-avatar-icon" icon={createOutline}></IonIcon></p>
                 <IonItem lines="none" className="profile-name">
                     <div className="profile-name-data">
                         <h3>{aluno.name}</h3>
@@ -52,16 +48,15 @@ const Profile: React.FC = () => {
                     <IonIcon className="data-icon-xp" icon={layers}></IonIcon>
                 </IonItem>
             </div>
-            <div className="profile-xp">
-                {aluno.ranking.xp}xp
-            </div>
+            <p style={{textAlign:"center", color:"white"}}>{aluno.ranking.xp}xp</p>
             <IonItem lines="none">
-                <p>Progresso na fase...</p>
+                <p style={{color:"white"}}>Progresso na fase...</p>
             </IonItem>
             <IonProgressBar className="bar-progress" color="success" value={aluno.ranking.xp/100}></IonProgressBar>
             <IonItemDivider>
                 <div className="bottom-icons">
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="warning" icon={medalOutline}></IonIcon></IonItem>
+                    <IonItem lines="none"><IonIcon className="bottom-icon" color="medium" icon={ribbonOutline}></IonIcon></IonItem>
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="medium" icon={rocketOutline}></IonIcon></IonItem>
                 </div>
             </IonItemDivider>

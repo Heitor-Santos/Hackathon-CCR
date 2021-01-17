@@ -4,7 +4,9 @@
     justify-content: center;
     margin: 10px 0;
 }
-
+#bt{
+    background-color: #96D4B9;
+}
 .tab-button {
     display: flex;
     flex-direction: column;
@@ -36,11 +38,10 @@
 .card {
     display: flex;
     justify-content: space-between;
-
+    background-color: #379683;
     margin: 2rem 1rem;
     padding: 1rem;
-
-    border: 1px solid black;
+    color: white;
     border-radius: 1rem;
 }
 

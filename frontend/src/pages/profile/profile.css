@@ -26,7 +26,7 @@ ion-content{
     /* background-color: aqua; */
     display: inline-block;
     justify-content: center;
-    height: 50%;
+    margin-bottom: 20%;
     width: 100%;
 }
 
@@ -49,7 +49,6 @@ ion-content{
 
 .profile-content-avatar-icon {
     position: relative;
-    margin-top: 50px;
     zoom: 1.5;
 }
 
@@ -57,7 +56,7 @@ ion-content{
     clear: left;
     width: 75%;
     margin: auto;
-
+    color: white;
     /* font-size: 18px; */
 }
 
@@ -79,7 +78,6 @@ ion-content{
 }
 
 .data {
-    margin-top: 20px;
     /* background-color: greenyellow; */
     justify-content: center;
     display: flex;
@@ -123,6 +121,7 @@ ion-content{
     /* background-color: blueviolet; */
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .bottom-invite-icon {
