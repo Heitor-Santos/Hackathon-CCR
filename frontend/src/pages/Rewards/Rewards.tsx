@@ -55,12 +55,12 @@ export default class Rewards extends React.Component<any, any> {
     }
 
     async componentDidMount() {
-        const user: any = (await axios.get("http://localhost:8888/user?email=cr7m10@gmail.com")).data;
+        const user: any = (await axios.get("https://time-133.herokuapp.com/user?email=cr7m10@gmail.com")).data;
         console.log(user)
         const userXP: number = user.ranking.xp;
         console.log(userXP)
         
-        const rewards = (await axios.get("http://localhost:8888/rewards")).data;
+        const rewards = (await axios.get("https://time-133.herokuapp.com/rewards")).data;
 
         this.setState({ userXP, rewards });
     }
@@ -70,7 +70,7 @@ export default class Rewards extends React.Component<any, any> {
     }
 
     handleRedeem = async (reward: any) => {
-        await axios.put('http://localhost:8888/rewards', {...reward, email: "cr7m10@gmail.com"});
+        await axios.put('https://time-133.herokuapp.com/rewards', {...reward, email: "cr7m10@gmail.com"});
         this.setState((prevState: any) => ({ userXP: prevState.userXP - reward.xp_needed }));
     }
 

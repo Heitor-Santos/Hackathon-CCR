@@ -14,7 +14,7 @@ const NewPost: React.FC = () => {
     const [criouPost, setPost] = useState<boolean>(false)
     const [link,setLink] = useState<any>(''); 
     async function newPost() {
-        await axios.post('http://localhost:8888/publication',{
+        await axios.post('https://time-133.herokuapp.com/publication',{
             id: uuidv4(),
             subjects:materia.split(",").map((el: string) => el.trim()),
             media: media.split(",").map((el: string) => el.trim()),
@@ -33,7 +33,7 @@ const NewPost: React.FC = () => {
         setPost(true)
     }
     return (
-        criouPost ? <Redirect to= "/tab1" /> :
+        criouPost ? <Redirect to= "/publications" /> :
         (<IonPage>
         <IonHeader>
             <IonToolbar>

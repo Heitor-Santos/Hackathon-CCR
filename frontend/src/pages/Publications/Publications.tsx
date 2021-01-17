@@ -52,7 +52,7 @@ const Posts = (props: postsProps) => {
   const [user, setUser] = useState<any>()
 
   const getUser = async () => {
-    const userMsg = (await axios.get("http://localhost:8888/user?email=cr7m10@gmail.com")).data
+    const userMsg = (await axios.get("https://time-133.herokuapp.com/user?email=cr7m10@gmail.com")).data
     setUser(userMsg)
   }
 
@@ -81,9 +81,9 @@ const Posts = (props: postsProps) => {
 
     rating.push(numb)
 
-    await axios.put("http://localhost:8888/publication", {id: id, rating: rating})
-    const userRes = await axios.get("http://localhost:8888/user?email=cr7m10@gmail.com")
-    await axios.put("http://localhost:8888/user", {email: "cr7m10@gmail.com", publications: {id: id, rating: numb}, ranking: {level: 20, xp: userRes.data.ranking.xp + 5}})
+    await axios.put("https://time-133.herokuapp.com/publication", {id: id, rating: rating})
+    const userRes = await axios.get("https://time-133.herokuapp.com/user?email=cr7m10@gmail.com")
+    await axios.put("https://time-133.herokuapp.com/user", {email: "cr7m10@gmail.com", publications: {id: id, rating: numb}, ranking: {level: 20, xp: userRes.data.ranking.xp + 5}})
 
     setMap(newMap);
   };
@@ -134,8 +134,8 @@ const Tab1: React.FC = () => {
 
   async function getPosts(_tag?: string[]){
     const tagsType = _tag ? _tag.join(','): tags.join(',')
-    let req = await axios.get(`http://localhost:8888/publication/type?type=${tagsType}`)
-    let reqUser = await axios.get(`http://localhost:8888/user?email=cr7m10@gmail.com`)
+    let req = await axios.get(`https://time-133.herokuapp.com/publication/type?type=${tagsType}`)
+    let reqUser = await axios.get(`https://time-133.herokuapp.com/user?email=cr7m10@gmail.com`)
     console.log(req,reqUser)
     setCards(req.data)
     setUser(reqUser.data)

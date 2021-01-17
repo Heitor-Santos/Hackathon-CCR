@@ -10,7 +10,7 @@ const RewardDetails: React.FC = () => {
 
   const getUser = async ()=> {
 
-    const res = (await (axios.get("http://localhost:8888/user?email=cr7m10@gmail.com"))).data
+    const res = (await (axios.get("https://time-133.herokuapp.com/user?email=cr7m10@gmail.com"))).data
     setUser(res)
 
   }
