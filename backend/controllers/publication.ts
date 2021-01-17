@@ -36,9 +36,10 @@ export async function getPublicationByType(req: Request, res: Response, db: Db) 
         .find({subjects: {$in: arrayReq}}).toArray())
 
     const findMedia = <Publication[]> (await db.collection('publications').find({media: {$in: arrayReq}}).toArray())
-    
+    const maps = findSubject.map(find => find.id)
+
     for (let find of findMedia) {
-        if (!findSubject.includes(find)) findSubject.push(find)
+        if (!maps.includes(find.id)) findSubject.push(find)
     }
 
     res.status(200).send(findSubject)
@@ -82,7 +83,7 @@ export async function updatePublication(req: Request, res: Response, db: Db) {
     const publication = <Publication> (await db.collection("publications").findOne({id: req.body.id}))
 
     for (var [key, value] of Object.entries(req.body)) {
-
+        
         publication[key] = value
     }
 

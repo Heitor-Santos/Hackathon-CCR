@@ -35,7 +35,10 @@ export interface User {
         level: number,
         xp: number
     },
-    publications: Publication[],
+    publications: {
+        id: string,
+        rating: number;
+    }[],
     rewards: Reward[],
     favorites: Publication[]
 }

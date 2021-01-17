@@ -43,7 +43,12 @@ export async function updateUser(req: Request, res: Response, db: Db) {
     const user = <User> (await db.collection("users").findOne({email: req.body.email}))
 
     for (var [key, value] of Object.entries(req.body)) {
-
+        console.log(key, value)
+        if(Array.isArray(user[key]) && !user[key].includes(value)) {
+            user[key].push(value)
+            continue;
+        }
+        
         user[key] = value
     }
 

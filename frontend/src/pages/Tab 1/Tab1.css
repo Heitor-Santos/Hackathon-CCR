@@ -21,3 +21,21 @@
     width: 80%;
     margin-left: 10%;
 }
+
+.cardSubtitle {
+    display: inline;
+    height: 1000px;
+}
+
+.rating {
+    color: black;
+}
+
+.tags {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.page-container {
+    padding: 20px 7px !important;
+}
