@@ -1,0 +1,126 @@
+:root {
+    --ion-color-secondary: #B514D9;
+    --ion-color-secondary-rgb: 0,102,0;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255,255,255;
+    --ion-color-secondary-shade: #9f12bf;
+    --ion-color-secondary-tint: #bc2cdd;
+}
+
+.top-button {
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.5;
+    background-color: #ffffff !important;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.profile-content {
+    /* background-color: aqua; */
+    display: inline-block;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+}
+
+.item-avatar {
+    position: relative;
+    width: 85% ; 
+    height : 85% ;
+}
+
+.profile-content-avatar{
+    display: flex;
+    /* justify-content: center; */
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width: 50%;
+    --min-height: 70%;
+}
+
+.profile-content-avatar-icon {
+    position: relative;
+    margin-top: 50px;
+    zoom: 1.5;
+}
+
+.profile-name {
+    clear: left;
+    width: 75%;
+    margin: auto;
+
+    /* font-size: 18px; */
+}
+
+.profile-name > div {
+    margin:  auto;
+    /* font-size: 18px; */
+}
+
+.profile-name > div > h3 {
+    font-weight: 600;
+    word-spacing: 5px;
+    /* font-size: 18px; */
+}
+
+.profile-name > div > p {
+    margin-left: 20px;
+    /* font-size: 18px; */
+}
+
+.data {
+    margin-top: 20px;
+    /* background-color: greenyellow; */
+    justify-content: center;
+    display: flex;
+}
+
+.data-icon-xp {
+    zoom: 2;
+}
+
+
+.profile-xp {
+    /* background-color: rgb(175, 0, 0); */
+    text-align: center;
+    margin-left: 15px;
+}
+
+.bar-progress{
+    height: 25px;
+    width: 75%;
+    outline-color: rgb(0, 0, 0);
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #000000;
+}
+
+.bottom-icons {
+    margin-top: 5px;
+    margin-left: 15px;
+    display: flex;
+    
+}
+
+.bottom-icon {
+    zoom: 1.4;
+    margin-right: 40px;
+}
+
+.bottom-invite {
+    display:flex;
+    width: 100%;
+    /* background-color: blueviolet; */
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-invite-icon {
+    zoom: 1.5;
+    margin-right: 6px;
+}
