@@ -1,0 +1,23 @@
+#user-info{
+    margin-top: 40px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    float: right;
+}
+#user-xp{
+    width: 80%;
+}
+#avatar{
+    height: 70px;
+    width: 70px;
+}
+#bt-new-post{
+    margin-top: 20vh;
+    width: 80%;
+    margin-left: 10%;
+}
+#search{
+    width: 80%;
+    margin-left: 10%;
+}
