@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { IonAvatar, IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonPage, IonProgressBar, IonTitle, IonToolbar } from '@ionic/react';
-import './profile.css';
+import './Profile.css';
 import { arrowRedo, createOutline, layers, medalOutline, personCircleOutline, ribbonOutline, rocketOutline } from 'ionicons/icons';
 import axios from 'axios'
 import { User } from '../../../../backend/interfaces'
@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
                     <IonItem lines="none"><IonIcon className="bottom-icon" color="medium" icon={rocketOutline}></IonIcon></IonItem>
                 </div>
             </IonItemDivider>
-            <IonItem lines="none" href="/rewards">
+            <IonItem lines="none" href="/reedemed-rewards">
                 <div className="bottom-invite">
                     <IonIcon className="bottom-invite-icon" color="secondary" icon={arrowRedo}></IonIcon>
                     <p>Cupons Resgatados</p>

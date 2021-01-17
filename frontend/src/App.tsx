@@ -11,8 +11,6 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, person, ticket} from 'ionicons/icons';
-import Tab1 from './pages/Tab 1/Tab1';
-import NewPost from './pages/NewPost/NewPost';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -31,33 +29,34 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './theme/variables.css';
-import Profile from './pages/profile/profile';
-import Rewards from './pages/Rewards';
-import RewardDetails from './pages/rewardsDetail./rewardDetails';
+import Profile from './pages/Profile/Profile';
+import Rewards from './pages/Rewards/Rewards';
+import ReedemedRewards from './pages/RedeemedRewards/ReedemedRewards';
+import Publications from './pages/Publications/Publications';
+import NewPost from './pages/NewPost/NewPost';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
-          <Route path="/tab2" component={Rewards} exact={true} />
-          <Route path="/tab3" component={Profile} exact={true}/>
-            <Route path="/rewards" component={RewardDetails} />
+          <Route path="/publications" component={Publications} exact={true} />
+          <Route path="/rewards" component={Rewards} exact={true} />
+          <Route path="/profile" component={Profile} exact={true}/>
+          <Route path="/reedemed-rewards" component={ReedemedRewards} />
           <Route path="/new-post" component={NewPost} />
-          <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
+          <Route path="/" render={() => <Redirect to="/publications" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
+          <IonTabButton tab="publications" href="/publications">
             <IonIcon icon={home} />
             <IonLabel>Inicio</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="rewards" href="/rewards">
             <IonIcon icon={ticket} />
             <IonLabel>Descontos</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="profile" href="/tab3">
+          <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={person} />
             <IonLabel>Perfil</IonLabel>
           </IonTabButton>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonProgressBar} from '@ionic/react';
-import './Tab1.css';
+import './Publications.css';
 import { closeCircleOutline, personCircleOutline, searchCircleOutline,  shareSocialOutline, star, starOutline} from 'ionicons/icons';
 import axios from 'axios'
 

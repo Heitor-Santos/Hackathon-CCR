@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IonCard, IonCardContent, IonCardHeader,  IonCardTitle, IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab1.css';
+import './ReedemedRewards.css';
 import axios from 'axios'
 
 
