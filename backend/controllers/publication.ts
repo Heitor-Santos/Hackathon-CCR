@@ -29,12 +29,19 @@ export async function getPublication(req: Request, res: Response, db: Db) {
 export async function getPublicationByType(req: Request, res: Response, db: Db) {
 
     const stringReq = req.query.type + ""
+    
     let arrayReq = stringReq.split(",")
     
-    const find = await db.collection('publications')
-        .find({or: [{subjects: {$in: arrayReq}}, {media: {$in: arrayReq}}]})
+    const findSubject = <Publication[]> (await db.collection('publications')
+        .find({subjects: {$in: arrayReq}}).toArray())
 
-    res.status(200).send(find)
+    const findMedia = <Publication[]> (await db.collection('publications').find({media: {$in: arrayReq}}).toArray())
+    
+    for (let find of findMedia) {
+        if (!findSubject.includes(find)) findSubject.push(find)
+    }
+
+    res.status(200).send(findSubject)
 
 }
 
