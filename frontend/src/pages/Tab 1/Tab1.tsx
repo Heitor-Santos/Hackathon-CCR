@@ -177,7 +177,7 @@ const Tab1: React.FC = () => {
             </span>
             <IonIcon icon={personCircleOutline} id="avatar"></IonIcon>
           </div>
-          <IonButton expand="block" id="bt-new-post">Fazer nova publicação</IonButton>
+          <IonButton href="/new-post" expand="block" id="bt-new-post">Fazer nova publicação</IonButton>
           <IonItem id="search">
             <IonInput placeholder="Filtre as publicações por tags" onIonChange={(e) => addTag(e)} type="search"></IonInput>
             <IonIcon size = "large" icon={searchCircleOutline} onClick={()=>getPosts()}></IonIcon>

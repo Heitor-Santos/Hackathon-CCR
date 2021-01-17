@@ -26,7 +26,6 @@ const student : User = {
 const Profile: React.FC = () => {
   const [aluno, setAluno] = useState(student)
     useEffect(() => {
-      console.log("oioi")
         axios.get('http://localhost:8888/user?email=' + email)
             .then(response => setAluno(response.data))
     })

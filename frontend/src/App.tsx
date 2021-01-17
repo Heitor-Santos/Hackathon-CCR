@@ -12,6 +12,7 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, home, map, person, square, ticket, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab 1/Tab1';
+import NewPost from './pages/NewPost/NewPost';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,6 +44,7 @@ const App: React.FC = () => (
           <Route path="/tab1" component={Tab1} exact={true} />
           <Route path="/tab2" component={Rewards} exact={true} />
           <Route path="/tab3" component={Profile} exact={true}/>
+          <Route path="/new-post" component={NewPost} />
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
