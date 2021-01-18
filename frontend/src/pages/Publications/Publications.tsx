@@ -148,16 +148,6 @@ const Tab1: React.FC = () => {
     
   }, [])
 
-  function addTag(e: any) {
-    let tag = e.detail.value
-    if (tag[tag.length - 1] == " ") {
-      const oldTags = [...tags]
-      oldTags.push(tag.slice(0, tag.length - 1))
-      setTags(oldTags)
-      getPosts(oldTags)
-    }
-  }
-
   function removeTag(index: number) {
     const oldTags = [...tags]
     oldTags.splice(index, 1)
@@ -180,7 +170,9 @@ const Tab1: React.FC = () => {
           <IonItem id="search">
             <form onSubmit={(e: any) => {
               e.preventDefault();
-              setTags([...tags, tag]);
+              const newTags = [...tags, tag];
+              setTags(newTags);
+              getPosts(newTags);
               setTag("");
             }}>
               <IonSearchbar
