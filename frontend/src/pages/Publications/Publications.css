@@ -7,6 +7,10 @@ body {
     --color: white !important;
 }
 
+#searchbar {
+    width: 100%;
+}
+
 #user-info{
     justify-content: center;
     align-items: center;

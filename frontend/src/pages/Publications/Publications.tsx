@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonProgressBar} from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonChip, IonContent, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonProgressBar, IonSearchbar} from '@ionic/react';
 import './Publications.css';
 import { closeCircleOutline, personCircleOutline, searchCircleOutline,  shareSocialOutline, star, starOutline} from 'ionicons/icons';
 import axios from 'axios'
@@ -128,6 +128,7 @@ const Posts = (props: postsProps) => {
 }
 
 const Tab1: React.FC = () => {
+  const [tag, setTag] = useState<string>("")
   const [tags, setTags] = useState<Array<string>>([])
   const [cards, setCards] = useState<Array<Publication>>()
   const [user, setUser] = useState<any>()
@@ -177,8 +178,16 @@ const Tab1: React.FC = () => {
           </div>
           <IonButton href="/new-post" expand="block" id="bt-new-post">Fazer nova publicação</IonButton>
           <IonItem id="search">
-            <IonInput autocomplete="on" placeholder="Filtre as publicações por tags" onIonChange={(e) => addTag(e)} type="search"></IonInput>
-            <IonIcon size = "large" icon={searchCircleOutline} onClick={()=>getPosts()}></IonIcon>
+            <form onSubmit={(e: any) => {
+              e.preventDefault();
+              setTags([...tags, tag]);
+              setTag("");
+            }}>
+              <IonSearchbar
+                value={tag}
+                placeholder="Filtre as publicações por tags"
+                onIonChange={(e: any) => setTag(e.detail.value)}></IonSearchbar>
+            </form>
           </IonItem>
           <Tags tags={tags} rmv={removeTag} />
           {cards?<Posts cards={cards} />:null}
