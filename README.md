@@ -20,6 +20,8 @@ Node.JS – Plataforma de aplicação com pré-compilação e otimização, poss
 
 Clone o repositório para um diretório da sua preferência. O Loomer requer o Node.js v10 ou posterior.
 
+Para rodar o backend crie um arquivo "proccess.env" e sete suas varíaveis de ambiente (MONGO_URL e PORT)
+
 Instale o Ionic:
 
     npm install -g ionic
